@@ -1,4 +1,4 @@
-### Introduction
+## Introduction
 🗃️ 1. Database
 A MongoDB database is a container for collections. It’s similar to a schema or database in SQL systems.<br/>
 - You can have multiple databases.
@@ -14,7 +14,7 @@ A document is a single record in MongoDB. It’s stored in BSON format (Binary J
 - Each document is a key-value pair object.
 - Every document must have a unique _id field (auto-generated if not provided).
 
-### Database Commands
+## Database Commands
 
 Create database
 
@@ -37,8 +37,9 @@ use <database_name>
 db.dropDatabase()
 ```
 
-### Collection Commands (CRUD operations)
+## Collection Commands (CRUD operations)
 
+### CREATE
 Create collection
 
 ```
@@ -57,6 +58,8 @@ db.student.insertMany([{name:"Ajay",age:24, score:{"maths":85, "english":90 }},
                        {name:"Bina",age:24, score:{"maths":65, "english":60 }},
                        {name:"Ram",age:23, score:{"maths":55, "english":60 }}])
 ```
+
+### READ
 Show all records
 
 ```
@@ -90,6 +93,8 @@ Display all collections in db
 ```
 show collections;
 ```
+
+### UPDATE
 
 Update single row
 
@@ -129,6 +134,8 @@ db.students.updateOne(
   { name: "Nitesh" },
   { $rename: { "subject": "course" } }
 )
+
+### DELETE
 ```
 Delete single record
 
