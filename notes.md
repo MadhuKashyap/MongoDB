@@ -91,6 +91,45 @@ Display all collections in db
 show collections;
 ```
 
+Update single row
+
+```
+db.student.updateOne({ name: 'Nitesh' },
+  { $set: { age: '35' } })
+```
+- Note : If you run this command and multiple records have the name "Nitesh", only the first matching document will be updated.
+
+Update multiple rows
+
+```
+db.students.updateMany(
+  { age: 27 },
+  { $set: { age: '35' } }
+)
+```
+
+Update table name
+
+```
+db.students.renameCollection('classroom')
+```
+Update column name (multiple)
+
+```
+db.students.updateMany(
+  {},
+  { $rename: { "subject": "course" } }
+)
+```
+
+Update single column name
+
+```
+db.students.updateOne(
+  { name: "Nitesh" },
+  { $rename: { "subject": "course" } }
+)
+```
 Delete single record
 
 ```
@@ -107,7 +146,6 @@ Delete a collection
 ```
 db.students.drop()
 ```
-
 
 
 Start and stop mongoDB in macOS
