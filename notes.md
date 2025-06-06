@@ -134,9 +134,9 @@ db.students.updateOne(
   { name: "Nitesh" },
   { $rename: { "subject": "course" } }
 )
+```
 
 ### DELETE
-```
 Delete single record
 
 ```
