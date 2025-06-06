@@ -99,3 +99,11 @@ db.student.find().sort({ age: 1 })
 ```
 
 11. 
+
+
+Start and stop mongoDB in macOS
+
+```
+brew services start mongodb/brew/mongodb-community@7.0
+brew services stop mongodb/brew/mongodb-community@7.0
+```
