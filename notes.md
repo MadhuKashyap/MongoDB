@@ -16,89 +16,98 @@ A document is a single record in MongoDB. It’s stored in BSON format (Binary J
 
 ### Database Commands
 
-1. Create database
+Create database
 
 ```
 use <database_name>
 ```
 This will create a new database by provided name or use an existing one.
 
-2. Show databases
+Show databases
 
 ```
 show dbs
 ```
 This will display all existing databases.
 
-3. Delete database
+Delete database
 
 ```
 use <database_name>
 db.dropDatabase()
 ```
 
-### Collection Commands
+### Collection Commands (CRUD operations)
 
-1. Create collection
+Create collection
 
 ```
 db.createCollection("<collection_name>")
 ```
 
-2. Insert 1 record
+Insert 1 record
 
 ```
 db.student.insertOne({ name: "Binay", age: 30, score: {"maths":65, "english":60 })
 ```
-3. Insert multiple records
+Insert multiple records
 
 ```
 db.student.insertMany([{name:"Ajay",age:24, score:{"maths":85, "english":90 }},
                        {name:"Bina",age:24, score:{"maths":65, "english":60 }},
                        {name:"Ram",age:23, score:{"maths":55, "english":60 }}])
 ```
-4. Delete single record
-
-```
-db.student.deleteOne({ name: "Ajay" })
-```
-
-5. Delete multiple records
-
-```
-db.student.deleteMany({ age: 24 })
-```
-
-6. Show all records
+Show all records
 
 ```
 db.student.find()
 ```
 
-7. Show record by filter
+Show record by filter
 ```
 db.student.find({age:18})
 ```
 
-8. Complex filter
+Complex filter
 
 ```
 db.student.find({score:{"maths":55, "english":60}})
 ```
 
-9. Limit the row count
+Limit the row count
 
 ```
 db.student.find().limit(2)
 ```
 
-10. Sort output in asc
+Sort output in asc
 
 ```
 db.student.find().sort({ age: 1 })
 ```
 
-11. 
+Display all collections in db
+```
+show collections;
+```
+
+Delete single record
+
+```
+db.student.deleteOne({ name: "Ajay" })
+```
+
+Delete multiple records
+
+```
+db.student.deleteMany({ age: 24 })
+```
+
+Delete a collection
+```
+db.students.drop()
+```
+
 
 
 Start and stop mongoDB in macOS
